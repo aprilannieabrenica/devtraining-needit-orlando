@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Training 2020" max_length="40" name="x_58872_needit_training" type="collection">
+        <element label="Module" max_length="300" name="module" type="string"/>
+    </element>
+</database>
