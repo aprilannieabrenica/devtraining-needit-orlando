@@ -29,7 +29,80 @@
         <rest_service_text/>
         <rest_variables/>
         <role_conditions/>
-        <script><![CDATA[(function executeRule(current, previous /*null when async*/ ) {	
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/ ) {
+
+    //   This an example for GlideSystem
+
+    //  gs.info("The requester for this record is" + current.u_requested_for.email);
+
+    //  gs.addInfoMessage("The requester for this record is" + current.u_requested_for.employee_number);
+
+    //  if (gs.hasRole("admin")) {
+    //      gs.addInfoMessage("You're an admin user");
+    //  }
+
+
+    // This MY example for GlideRecord
+
+    //     gs.info('Calling Incident Table');
+    //     try {
+
+    //         var count = new GlideAggregate('incident');
+    //         count.addAggregate('COUNT');
+    //         count.query();
+    //         var incidents = 0;
+    //         if (count.next()) {
+    //             incidents = count.getAggregate('COUNT');
+    //         }
+    //         //Number of incidents varies depending on the current state
+    //         //of the incident table
+    //         gs.info('Number of incidents: ' + incidents);
+
+
+    //         var myTable = new GlideRecord('incident');
+
+
+    //         myTable.addQuery('active', false);
+    //         myTable.addQuery('category', 'Hardware');
+    //         myTable.query();
+
+
+    //         while (myTable.next()) {
+    // 			gs.info('Random Text');
+    // //             myTable.priority = 1;
+    // //             myTable.update();
+    //         }
+    //     } catch (err) {
+    //         gs.error('Something ' + err.message);
+    //         gs.addErrorMessage('Something ' + err.message);
+    //     }
+	
+	//   This an example for GlideRecord
+
+//     var myTbl = new GlideRecord('x_58872_needit_needit');
+
+//     myTbl.addQuery('priority', '=', '1');
+
+//     myTbl.query();
+
+//     while (myTbl.next()) {
+//         myTbl.priority = 2;
+//         myTbl.state = 1;
+//         myTbl.update();
+//     }
+
+//     myTbl.setValue('priority', '2');
+//     myTbl.updateMultiple();
+	
+// 	var rightnow = new GlideDateTime();
+	
+// 	var whenneeded = new GlideDateTime(current.u_when_needed);
+	
+// 	if(whenneeded.before(rightnow)){
+// 		gs.addErrorMessage('When needed must be future date. your request is not saved to database');
+// 		current.setAbortAction(true);
+// 	}
+	
 	
 	// GlideDateTime example
 	
@@ -46,14 +119,15 @@
 		gs.error('Stop' + err.message);
 	}
 
-})(current, previous);]]></script>
+})(current, previous);
+]]></script>
         <sys_class_name>sys_script</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2020-07-14 06:11:49</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>2f6205f8db0250103e9d2fb7489619e6</sys_id>
-        <sys_mod_count>23</sys_mod_count>
+        <sys_mod_count>24</sys_mod_count>
         <sys_name>This is a Business Rule Demo</sys_name>
         <sys_overrides/>
         <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
@@ -61,7 +135,7 @@
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
         <sys_update_name>sys_script_2f6205f8db0250103e9d2fb7489619e6</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2020-07-15 02:02:26</sys_updated_on>
+        <sys_updated_on>2020-07-15 02:04:57</sys_updated_on>
         <template/>
         <when>before</when>
     </sys_script>
