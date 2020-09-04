@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic">
+    <sys_cb_topic action="INSERT_OR_UPDATE">
+        <applicability/>
+        <category/>
+        <connect_queue/>
+        <description/>
+        <flexible_conversation_switching>false</flexible_conversation_switching>
+        <graph>{
+  "graph_api_version": "1.0.16",
+  "goals": {
+    "3bbefa0105ae479eb924f2b9a71af680": {
+      "id": "3bbefa0105ae479eb924f2b9a71af680",
+      "trigger": {
+        "type": "primary"
+      },
+      "name": "primary",
+      "applicability": "",
+      "description": "",
+      "nodes": {
+        "379ac358e2eb4fb29e352e11e4d20788": {
+          "id": "379ac358e2eb4fb29e352e11e4d20788",
+          "stepType": "Start",
+          "name": "Start",
+          "greetingResponse": {
+            "value": "Hello {{vaInputs.user.first_name}}!\nHow are you doing today? How can I help you?",
+            "mode": "simple"
+          }
+        },
+        "2e249f8226b646df89bac279e1a96d66": {
+          "id": "2e249f8226b646df89bac279e1a96d66",
+          "stepType": "TerminateGoal",
+          "name": "End",
+          "confirmationMessage": {
+            "value": "See you",
+            "mode": "simple"
+          }
+        },
+        "f58b62182e1847fda405636084dc1f7e": {
+          "id": "f58b62182e1847fda405636084dc1f7e",
+          "stepType": "Prompt",
+          "name": "Ask for email",
+          "prompt": {
+            "value": "Please enter your email.",
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "Got it. Please wait while I'm checking.",
+            "mode": "simple"
+          },
+          "applicability": {
+            "mode": "query",
+            "value": ""
+          },
+          "optional": false,
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "entity": "",
+          "variableId": "328e2a1995c44e1ebbb2ed7842b53902"
+        },
+        "086b8f88b86e4d9786fa2901a4044129": {
+          "id": "086b8f88b86e4d9786fa2901a4044129",
+          "stepType": "TextOutput",
+          "name": "Show records",
+          "value": {
+            "value": "Hey {{vaInputs.ask_for_email}}\nthis email has no associated records.",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        }
+      },
+      "edges": [
+        {
+          "id": "f37a3adebc824aa0aad516bd7f5d6efe",
+          "edgeType": "Edge",
+          "source": "f58b62182e1847fda405636084dc1f7e",
+          "target": "086b8f88b86e4d9786fa2901a4044129",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "b82f5f3ec25840fea4601c38a5557085",
+          "edgeType": "Edge",
+          "source": "379ac358e2eb4fb29e352e11e4d20788",
+          "target": "f58b62182e1847fda405636084dc1f7e",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "dd695e666af04910a00b86f3303dd7e8",
+          "edgeType": "Edge",
+          "source": "086b8f88b86e4d9786fa2901a4044129",
+          "target": "2e249f8226b646df89bac279e1a96d66",
+          "sourcePort": "",
+          "targetPort": ""
+        }
+      ]
+    }
+  },
+  "variables": {
+    "current-user": {
+      "category": "vaInputs",
+      "id": "current-user",
+      "label": "User",
+      "name": "user",
+      "table": "sys_user",
+      "varType": "reference"
+    },
+    "328e2a1995c44e1ebbb2ed7842b53902": {
+      "id": "328e2a1995c44e1ebbb2ed7842b53902",
+      "name": "ask_for_email",
+      "label": "Ask For Email",
+      "varType": "string",
+      "category": "vaInputs"
+    }
+  }
+}</graph>
+        <key_phrases>Test Topic</key_phrases>
+        <library>false</library>
+        <live_agent>false</live_agent>
+        <name>Test Topic</name>
+        <nlu_intent/>
+        <nlu_intent_label/>
+        <nlu_model/>
+        <nlu_model_label/>
+        <nlu_provider/>
+        <roles/>
+        <sys_class_name>sys_cb_topic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-07-17 03:12:27</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>fda87b65dbc6d0103e9d2fb7489619e1</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Test Topic</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_cb_topic_fda87b65dbc6d0103e9d2fb7489619e1</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-07-17 03:25:46</sys_updated_on>
+        <variables/>
+    </sys_cb_topic>
+    <sys_variable_value action="delete_multiple" query="document_key=fda87b65dbc6d0103e9d2fb7489619e1"/>
+</record_update>

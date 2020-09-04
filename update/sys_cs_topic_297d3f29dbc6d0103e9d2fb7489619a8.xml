@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cs_topic">
+    <sys_cs_topic action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applicability>true</applicability>
+        <cb_topic_id display_value="Needit Ticket Inquiry">236d7f29dbc6d0103e9d2fb7489619b5</cb_topic_id>
+        <definition>{"id":"236d7f29dbc6d0103e9d2fb7489619b5","name":"Needit Update Ticket","system_topic":false,"vendor_id":"c2f0b8f187033200246ddd4c97cb0bb9","description":"Needit Update Ticket","applicability":"true","category":"","key_phrases":["Needit Update Ticket"],"variables":[{"name":"__segment_trigger_45915b3853eb4407ae002695c4f22075_done","type":"java.lang.Object","init_value":"false"},{"name":"previous_graph_node","type":"java.lang.Object"}],"fields":[{"type":"Reference","table_name":"sys_user","name":"user","unique":false,"key_phrases":[],"static_enum_list":[]},{"type":"Boolean","name":"RootDecisionBranch_2d7d3f29b3c6d010eb0089017d05c7a7","unique":false,"default_value":"true","key_phrases":[],"static_enum_list":[]},{"type":"String","name":"__silent_StartGoal_0950a68835c74fc6b4496a4eb95da564","unique":false,"key_phrases":[],"static_enum_list":[]},{"type":"String","name":"__silent_Decision_RootDecision_a97d3f2930c6d010e7334cf67a0ddaa7","unique":false,"key_phrases":[],"static_enum_list":[]},{"type":"String","name":"__silent_Branch_RootDecisionBranch_e97d3f2960c6d01033057a1c13bccca7","unique":false,"key_phrases":[],"static_enum_list":[]},{"type":"String","name":"__silent_TerminateGoal_7e3c46bb29b2498e931a35ae58878c5b","unique":false,"key_phrases":[],"static_enum_list":[]}],"actions":[],"tasks":[{"type":"Consumer to system","show_as_button":true,"name":"primary","description":"primary","applicability":"vaVars.__segment_trigger_45915b3853eb4407ae002695c4f22075_done==false &amp;&amp; true","mode":"Qmode","key_phrases":[],"greeting_msg":"vaInputs.initialize(\"user\");vaInputs.initialize(\"RootDecisionBranch_2d7d3f29b3c6d010eb0089017d05c7a7\");vaInputs.initialize(\"__silent_Branch_RootDecisionBranch_e97d3f2960c6d01033057a1c13bccca7\");vaInputs.initialize(\"__silent_StartGoal_0950a68835c74fc6b4496a4eb95da564\");vaInputs.initialize(\"__silent_Decision_RootDecision_a97d3f2930c6d010e7334cf67a0ddaa7\");vaInputs.initialize(\"__silent_TerminateGoal_7e3c46bb29b2498e931a35ae58878c5b\");null;","fields":[{"name":"__silent_Decision_RootDecision_a97d3f2930c6d010e7334cf67a0ddaa7","direction":"Input","required":true,"prompt_msg":"vaVars.previous_graph_node=\"RootDecision_for_goal_primary___RootDecision_a97d3f2930c6d010e7334cf67a0ddaa7\";vaInputs.__silent_Decision_RootDecision_a97d3f2930c6d010e7334cf67a0ddaa7=true;null;","confirm_msg_on_default_value":{"msg":"","val_for_confirm":true},"nlu_text_input":false,"nlu_confirmation_prompt":false,"acknowledge_msg":"vaVars.previous_graph_node=\"RootDecision_for_goal_primary___RootDecision_a97d3f2930c6d010e7334cf67a0ddaa7\";vaInputs.RootDecisionBranch_2d7d3f29b3c6d010eb0089017d05c7a7=true;null;"},{"name":"__silent_Branch_RootDecisionBranch_e97d3f2960c6d01033057a1c13bccca7","applicable":"vaVars.previous_graph_node==\"RootDecision_for_goal_primary___RootDecision_a97d3f2930c6d010e7334cf67a0ddaa7\" &amp;&amp; ((vaInputs.RootDecisionBranch_2d7d3f29b3c6d010eb0089017d05c7a7.getValue() == true))","direction":"Input","required":true,"prompt_msg":"vaVars.previous_graph_node=\"RootDecisionBranch_e97d3f2960c6d01033057a1c13bccca7___RootDecisionBranch_e97d3f2960c6d01033057a1c13bccca7\";vaInputs.__silent_Branch_RootDecisionBranch_e97d3f2960c6d01033057a1c13bccca7=true;null;","confirm_msg_on_default_value":{"msg":"","val_for_confirm":true},"nlu_text_input":false,"nlu_confirmation_prompt":false,"acknowledge_msg":"vaVars.previous_graph_node=\"RootDecisionBranch_e97d3f2960c6d01033057a1c13bccca7___RootDecisionBranch_e97d3f2960c6d01033057a1c13bccca7\";null;"},{"name":"__silent_StartGoal_0950a68835c74fc6b4496a4eb95da564","applicable":"vaVars.previous_graph_node==\"RootDecisionBranch_e97d3f2960c6d01033057a1c13bccca7___RootDecisionBranch_e97d3f2960c6d01033057a1c13bccca7\"","direction":"Input","required":true,"prompt_msg":"vaVars.previous_graph_node=\"Start___0950a68835c74fc6b4496a4eb95da564\";vaInputs.__silent_StartGoal_0950a68835c74fc6b4496a4eb95da564=true;null;","confirm_msg_on_default_value":{"msg":"","val_for_confirm":true},"nlu_text_input":false,"nlu_confirmation_prompt":false,"acknowledge_msg":"vaVars.previous_graph_node=\"Start___0950a68835c74fc6b4496a4eb95da564\";null;"},{"name":"__silent_TerminateGoal_7e3c46bb29b2498e931a35ae58878c5b","applicable":"vaVars.previous_graph_node==\"Start___0950a68835c74fc6b4496a4eb95da564\"","direction":"Input","required":true,"prompt_msg":"vaVars.previous_graph_node=\"End___7e3c46bb29b2498e931a35ae58878c5b\";vaInputs.__silent_TerminateGoal_7e3c46bb29b2498e931a35ae58878c5b=true;null;","confirm_msg_on_default_value":{"msg":"","val_for_confirm":true},"nlu_text_input":false,"nlu_confirmation_prompt":false,"acknowledge_msg":"vaVars.previous_graph_node=\"End___7e3c46bb29b2498e931a35ae58878c5b\";vaVars.__segment_trigger_45915b3853eb4407ae002695c4f22075_done=true;null;"}],"variables_update":[]}],"roles":[],"active":true,"published":true,"library":false,"flexible_conversation_switching":false,"design_category":"","nlu_provider":"","nlu_model":"","nlu_intent":"","score":0.0,"visible":true,"sys_scope":"6ead8e780f603200cd674f8ce1050ed1","sys_domain":"global","title":"Needit Update Ticket","nlu_intent_label":"","nlu_model_label":""}</definition>
+        <design_category/>
+        <fields/>
+        <flexible_conversation_switching>false</flexible_conversation_switching>
+        <is_system_topic>false</is_system_topic>
+        <key_phrases>Needit Update Ticket</key_phrases>
+        <last_published_on>2020-07-17 03:33:28</last_published_on>
+        <library>false</library>
+        <library_usage/>
+        <metaphone>APTT TKT NTT</metaphone>
+        <name>Needit Update Ticket</name>
+        <nlu_intent/>
+        <nlu_intent_label/>
+        <nlu_model/>
+        <nlu_model_label/>
+        <nlu_provider/>
+        <published>true</published>
+        <roles/>
+        <sys_class_name>sys_cs_topic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-07-17 03:33:28</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>297d3f29dbc6d0103e9d2fb7489619a8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Needit Update Ticket</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_cs_topic_297d3f29dbc6d0103e9d2fb7489619a8</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-07-17 03:33:28</sys_updated_on>
+        <title>Needit Update Ticket</title>
+        <vendor display_value="ServiceNow">c2f0b8f187033200246ddd4c97cb0bb9</vendor>
+        <visible>true</visible>
+    </sys_cs_topic>
+    <sys_variable_value action="delete_multiple" query="document_key=297d3f29dbc6d0103e9d2fb7489619a8"/>
+</record_update>

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic">
+    <sys_cb_topic action="INSERT_OR_UPDATE">
+        <applicability/>
+        <category/>
+        <connect_queue/>
+        <description>Update ticket</description>
+        <flexible_conversation_switching>false</flexible_conversation_switching>
+        <graph>{
+  "graph_api_version": "1.0.16",
+  "goals": {
+    "1a30e2001132465282753cdd823d9132": {
+      "id": "1a30e2001132465282753cdd823d9132",
+      "trigger": {
+        "type": "primary"
+      },
+      "name": "primary",
+      "applicability": "",
+      "description": "",
+      "nodes": {
+        "0950a68835c74fc6b4496a4eb95da564": {
+          "id": "0950a68835c74fc6b4496a4eb95da564",
+          "stepType": "Start",
+          "name": "Start",
+          "greetingResponse": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "7e3c46bb29b2498e931a35ae58878c5b": {
+          "id": "7e3c46bb29b2498e931a35ae58878c5b",
+          "stepType": "TerminateGoal",
+          "name": "End",
+          "confirmationMessage": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "e9eb3d0e174042ceae396278f7a20325": {
+          "id": "e9eb3d0e174042ceae396278f7a20325",
+          "stepType": "Prompt",
+          "name": "Ask for ticket number",
+          "prompt": {
+            "value": "Hi {{vaInputs.user.first_name}}, what is your ticket NeedIt number?",
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "Sure we will check on that {{vaInputs.user.first_name}}, please wait.",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "optional": false,
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "entity": "",
+          "variableId": "b8a6b687b2c24f8b97dcdf0d196666e1"
+        },
+        "28ccf9c1e5cb4ab6bf9f489eca9516bf": {
+          "id": "28ccf9c1e5cb4ab6bf9f489eca9516bf",
+          "stepType": "LookupRecord",
+          "name": "Lookup Check",
+          "condition": {
+            "mode": "glide_query",
+            "value": "number={{vaInputs.ask_for_ticket_number}}"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "variableId": "5e6fceb2d00d4c8a99922a9c42f58d52"
+        },
+        "0c32c9b6fbd740e7b261e576bdc6f918": {
+          "id": "0c32c9b6fbd740e7b261e576bdc6f918",
+          "stepType": "RecordOutput",
+          "name": "Results",
+          "variableId": "5e6fceb2d00d4c8a99922a9c42f58d52",
+          "mode": "variable",
+          "tableName": "x_58872_needit_needit",
+          "fields": [
+            "number",
+            "short_description",
+            "state"
+          ],
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "condition": {
+            "mode": "",
+            "value": ""
+          }
+        }
+      },
+      "edges": [
+        {
+          "id": "474c73d0713a4668bcee3758349033a3",
+          "edgeType": "Edge",
+          "source": "e9eb3d0e174042ceae396278f7a20325",
+          "target": "28ccf9c1e5cb4ab6bf9f489eca9516bf",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "f573e1c14e7f4cd2ba938f103505a2f9",
+          "edgeType": "Edge",
+          "source": "0950a68835c74fc6b4496a4eb95da564",
+          "target": "e9eb3d0e174042ceae396278f7a20325",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "44cfcc8eaa3540708a0df7657be302e0",
+          "edgeType": "Edge",
+          "source": "28ccf9c1e5cb4ab6bf9f489eca9516bf",
+          "target": "0c32c9b6fbd740e7b261e576bdc6f918",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "9900723b48d945c9b98f33e18f4f8143",
+          "edgeType": "Edge",
+          "source": "0c32c9b6fbd740e7b261e576bdc6f918",
+          "target": "7e3c46bb29b2498e931a35ae58878c5b",
+          "sourcePort": "",
+          "targetPort": ""
+        }
+      ]
+    }
+  },
+  "variables": {
+    "current-user": {
+      "category": "vaInputs",
+      "id": "current-user",
+      "label": "User",
+      "name": "user",
+      "table": "sys_user",
+      "varType": "reference"
+    },
+    "b8a6b687b2c24f8b97dcdf0d196666e1": {
+      "id": "b8a6b687b2c24f8b97dcdf0d196666e1",
+      "name": "ask_for_ticket_number",
+      "label": "Ask For Ticket Number",
+      "varType": "string",
+      "category": "vaInputs"
+    },
+    "5e6fceb2d00d4c8a99922a9c42f58d52": {
+      "id": "5e6fceb2d00d4c8a99922a9c42f58d52",
+      "name": "lookup_check",
+      "label": "Lookup Check",
+      "varType": "reference",
+      "table": "x_58872_needit_needit",
+      "category": "vaInputs"
+    }
+  }
+}</graph>
+        <key_phrases>Needit Ticket Inquiry</key_phrases>
+        <library>false</library>
+        <live_agent>false</live_agent>
+        <name>Needit Ticket Inquiry</name>
+        <nlu_intent/>
+        <nlu_intent_label/>
+        <nlu_model/>
+        <nlu_model_label/>
+        <nlu_provider/>
+        <roles/>
+        <sys_class_name>sys_cb_topic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-07-17 03:33:20</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>236d7f29dbc6d0103e9d2fb7489619b5</sys_id>
+        <sys_mod_count>21</sys_mod_count>
+        <sys_name>Needit Ticket Inquiry</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_cb_topic_236d7f29dbc6d0103e9d2fb7489619b5</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-07-17 04:23:08</sys_updated_on>
+        <variables/>
+    </sys_cb_topic>
+    <sys_variable_value action="delete_multiple" query="document_key=236d7f29dbc6d0103e9d2fb7489619b5"/>
+</record_update>
